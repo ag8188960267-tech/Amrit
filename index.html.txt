@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malik Prediction</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<link href="css/all.min.css" rel="stylesheet">
+
+<!-- META PIXEL (EASY UPDATE) -->
+<script>
+var META_PIXEL_ID = '0000000000000';
+
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', META_PIXEL_ID);
+fbq('track', 'PageView');
+</script>
+
+<style>
+/* Background image and overlay */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: url('cricket.webp') no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7); /* dark overlay */
+  z-index: 0;
+}
+
+/* Ensure content is above overlay */
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="hero">
+
+  <div class="profile-picture">
+    <img style="margin-top:-20px;height:100px;width:100px" src="image.png">
+  </div>
+
+  <div class="content">
+    <h1 class="heading1">👑 MALIK PREDICTION 👑</h1>
+
+    <div class="subscriber-counter">
+      <p id="subscriber-count"
+         style="margin:18px;font-size:25px;font-weight:bold;color:white">
+        74,028 Subscribers
+      </p>
+      <small style="color:#7CFF7C;font-size:13px;">
+        ⬆ <span id="today">+42</span> joined today
+      </small>
+    </div>
+  </div>
+
+  <div style="margin:0 15px;margin-top:-20px" class="button">
+    <a href="https://t.me/+cvfoSxEdMnwzZWI1"
+       onclick="fbq('track','Lead');"
+       class="btn btn--stripe">
+      Join Cricket Ka Sabse Bada Tipper
+      <i class="fa-brands fa-telegram"></i>
+    </a>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="points">
+      <ul>
+        <li><i class="fa-solid fa-share"></i> IPL - 75 / 77 PASS 🏆</li>
+        <li><i class="fa-solid fa-share"></i> BBL - 67 / 67 PASS 🏆</li>
+        <li><i class="fa-solid fa-share"></i> PSL - 34 / 35 PASS 🏆</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="button">
+    <a href="https://t.me/+cvfoSxEdMnwzZWI1"
+       class="btn btn--stripe">
+      SUBSCRIBE FOR FREE <i class="fa-brands fa-telegram"></i>
+    </a>
+  </div>
+
+</div>
+
+<script>
+let subscribers = 88028;  
+let today = 42;  
+
+const subEl = document.getElementById("subscriber-count");
+const todayEl = document.getElementById("today");
+
+let start = subscribers - 120;
+let current = start;
+
+let intro = setInterval(()=>{
+  current += 3;
+  subEl.innerText = current.toLocaleString()+" Subscribers";
+  if(current >= subscribers){
+    clearInterval(intro);
+  }
+},30);
+
+setInterval(()=>{
+  let add = Math.floor(Math.random()*2)+1; 
+  subscribers += add;
+  today += add;
+  subEl.innerText = subscribers.toLocaleString()+" Subscribers";
+  todayEl.innerText = "+"+today;
+},5000);
+</script>
+
+</body>
+</html>
